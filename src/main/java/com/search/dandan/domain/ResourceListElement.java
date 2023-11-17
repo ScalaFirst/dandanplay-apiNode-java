@@ -1,5 +1,6 @@
 package com.search.dandan.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,13 +13,31 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class ResourceListElement {
-    private String Title;
-    private Integer TypeId;
-    private String TypeName;
-    private Integer SubgroupId;
-    private String SubgroupName;
-    private String Magnet;
-    private String PageUrl;
-    private String FileSize;
-    private String PublishDate;
+
+    @JsonProperty("Title")
+    private String title;
+
+    @JsonProperty("TypeId")
+    private Integer typeId;
+
+    @JsonProperty("TypeName")
+    private String typeName;
+
+    @JsonProperty("SubgroupId")
+    private Integer subgroupId;
+
+    @JsonProperty("SubgroupName")
+    private String subgroupName;
+
+    @JsonProperty("Magnet")
+    private String magnet;
+
+    @JsonProperty("PageUrl")
+    private String pageUrl;
+
+    @JsonProperty("FileSize")
+    private String fileSize;
+
+    @JsonProperty("PublishDate")
+    private String publishDate;
 }

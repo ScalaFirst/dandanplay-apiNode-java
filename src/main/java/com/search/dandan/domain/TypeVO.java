@@ -1,6 +1,8 @@
 package com.search.dandan.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -11,14 +13,9 @@ import java.util.List;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class TypeVO {
-    private List<ListElement> Types;
 
-    public List<ListElement> getTypes() {
-        return Types;
-    }
-
-    public void setTypes(List<ListElement> types) {
-        Types = types;
-    }
+    @JsonProperty("Types")
+    private List<ListElement> types;
 }

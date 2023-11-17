@@ -1,6 +1,8 @@
 package com.search.dandan.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -11,27 +13,20 @@ import java.util.List;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class ListVo {
-    private boolean HasMore;
-    private List<ResourceListElement> Resources;
+
+    @JsonProperty("HasMore")
+    private boolean hasMore;
+
+    @JsonProperty("Resources")
+    private List<ResourceListElement> resources;
 
     public boolean getHasMore() {
-        return HasMore;
+        return hasMore;
     }
 
     public boolean isHasMore() {
-        return HasMore;
-    }
-
-    public void setHasMore(boolean hasMore) {
-        HasMore = hasMore;
-    }
-
-    public List<ResourceListElement> getResources() {
-        return Resources;
-    }
-
-    public void setResources(List<ResourceListElement> resources) {
-        Resources = resources;
+        return hasMore;
     }
 }

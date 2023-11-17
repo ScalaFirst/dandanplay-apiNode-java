@@ -1,6 +1,8 @@
 package com.search.dandan.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -11,14 +13,9 @@ import java.util.List;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class SubgroupVO {
-    private List<ListElement> Subgroups;
 
-    public List<ListElement> getSubgroups() {
-        return Subgroups;
-    }
-
-    public void setSubgroups(List<ListElement> subgroups) {
-        Subgroups = subgroups;
-    }
+    @JsonProperty("Subgroups")
+    private List<ListElement> subgroups;
 }

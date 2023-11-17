@@ -1,6 +1,8 @@
 package com.search.dandan.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
@@ -9,23 +11,12 @@ import lombok.NoArgsConstructor;
  */
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class ListElement {
-    private Integer Id;
-    private String Name;
 
-    public Integer getId() {
-        return Id;
-    }
+    @JsonProperty("Id")
+    private Integer id;
 
-    public void setId(Integer id) {
-        Id = id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
+    @JsonProperty("Name")
+    private String name;
 }
