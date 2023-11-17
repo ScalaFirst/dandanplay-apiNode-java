@@ -1,9 +1,9 @@
 version: '1.0'
 services:
   web:
-    images: nginx
+    images: java
     ports:
       - "7864:8080"
-    environments:
-      - spring.profiles.active=prod
+#    environments:
+#      - spring.profiles.active=prod
     command: java -jar xxx.jar
