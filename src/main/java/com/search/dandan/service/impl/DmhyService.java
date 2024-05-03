@@ -20,8 +20,8 @@ import java.util.List;
  * @since 2023-11-17 11:17:00
  */
 @Service
-public class SearchShareDmhyImpl implements SearchService {
-    private static final Logger log = LoggerFactory.getLogger(SearchShareDmhyImpl.class);
+public class DmhyService implements SearchService {
+    private static final Logger log = LoggerFactory.getLogger(DmhyService.class);
 
     private static final String dmhyBaseUri = "https://share.dmhy.org";
     private static final String dmhyTypeAndSubgroupUri = dmhyBaseUri + "/topics/advanced-search?team_id=0&sort_id=0&orderby=";

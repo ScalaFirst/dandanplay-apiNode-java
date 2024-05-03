@@ -21,3 +21,7 @@ logging:
   level:
     com.search: info
     org.springframework: warn
+
+impl:
+  # 支持的搜索引擎: dmhy, acgnx
+  search: acgnx

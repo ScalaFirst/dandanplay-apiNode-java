@@ -4,7 +4,7 @@ import com.search.dandan.domain.ListVo;
 import com.search.dandan.domain.SubgroupVO;
 import com.search.dandan.domain.TypeVO;
 import com.search.dandan.service.SearchService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,8 +21,8 @@ import java.util.Map;
 @RestController
 public class SearchController {
 
-    @Autowired
-    SearchService searchShareDmhyService;
+    @Resource(name = "${impl.search}Service")
+    private SearchService searchService;
 
     @GetMapping("/")
     public Map<String, String> readRoot() {
@@ -38,17 +38,17 @@ public class SearchController {
                            @RequestParam(value = "type", required = false) String type,
                            @RequestParam(value = "r", required = false) String r,
                            @RequestParam(value = "page", defaultValue = "1") int page) throws IOException {
-        return searchShareDmhyService.getListPage(keyword, subgroup, type, r, page);
+        return searchService.getListPage(keyword, subgroup, type, r, page);
     }
 
     @GetMapping("/subgroup")
     public SubgroupVO subgroup() throws IOException {
-        return searchShareDmhyService.getSubgroup();
+        return searchService.getSubgroup();
     }
 
     @GetMapping("/type")
     public TypeVO type() throws IOException {
-        return searchShareDmhyService.getType();
+        return searchService.getType();
     }
 
 }
